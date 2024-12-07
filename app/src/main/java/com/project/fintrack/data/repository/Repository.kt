@@ -22,7 +22,7 @@ class Repository(context: Context) {
         transactionDao.update(transaction)
     }
 
-    suspend fun deleteTransaction(id: Int) = withContext(Dispatchers.IO) {
-        transactionDao.delete(id)
+    suspend fun deleteTransaction(transaction: TransactionEntity) = withContext(Dispatchers.IO) {
+        transactionDao.delete(transaction)
     }
 }
